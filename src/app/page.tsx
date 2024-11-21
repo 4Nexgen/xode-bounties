@@ -1,3 +1,4 @@
+import { BountiesTable } from "@/components/BountiesTable";
 import Image from "next/image";
 
 export default function Home() {
@@ -19,11 +20,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto py-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid amet,
-        velit illo magnam, quod atque, suscipit veritatis fugit sunt ratione
-        voluptatem quam inventore. Perferendis, libero. Illo incidunt maiores
-        quaerat sapiente.
+      <div className="container mx-auto py-10 min-h-screen">
+        <BountiesTable />
       </div>
     </div>
   );
