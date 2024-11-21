@@ -17,7 +17,7 @@ export const bounty_sample_data: Bounty[] = [
   {
     id: "2",
     date: "2024-10-10",
-    category: "pallet",
+    category: "wasm smart contract",
     title: "Upgrade to Polkadot stable2409",
     description:
       "Add regression tests to ensure the behaviour is maintained with future changes.",
@@ -41,7 +41,7 @@ export const bounty_sample_data: Bounty[] = [
   {
     id: "3",
     date: "2024-11-10",
-    category: "pallet",
+    category: "wasm smart contract",
     title: "Fix bug in optimism gas oracle",
     description:
       "Add regression tests to ensure the behaviour is maintained with future changes.",
@@ -77,7 +77,7 @@ export const bounty_sample_data: Bounty[] = [
   {
     id: "3",
     date: "2024-11-10",
-    category: "pallet",
+    category: "wasm smart contract",
     title: "Fix bug in optimism gas oracle",
     description:
       "Add regression tests to ensure the behaviour is maintained with future changes.",

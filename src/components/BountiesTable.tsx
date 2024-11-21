@@ -27,8 +27,21 @@ export function BountiesTable() {
           {bounty_sample_data.map((row, k) => {
             return (
               <tr key={`bounty-row-${k}`}>
-                <td className={"p-2 border-b " + (k == 0 && "border-t")}>
-                  icon
+                <td className={"w-20 p-2 border-b " + (k == 0 && "border-t")}>
+                  <div className="flex items-center justify-center rounded-lg p-1 h-12 w-20">
+                    {row.category == "pallet" && (
+                      <img
+                        src="/categories/substrate.png"
+                        className="h-full w-full object-contain"
+                      />
+                    )}
+                    {row.category == "wasm smart contract" && (
+                      <img
+                        src="/categories/ink.svg"
+                        className="h-full w-full object-contain"
+                      />
+                    )}
+                  </div>
                 </td>
                 <td className={"p-2 border-b " + (k == 0 && "border-t")}>
                   <strong className="font-bold">{row.title}</strong>
@@ -41,7 +54,10 @@ export function BountiesTable() {
                     {formatDateToRelative(row.date)}
                   </p>
                 </td>
-                <td className={"p-2 border-b " + (k == 0 && "border-t")}>
+                <td
+                  className={"p-2 border-b " + (k == 0 && "border-t")}
+                  align="right"
+                >
                   <button className="bg-theme-default text-white py-2 px-6 text-sm rounded-lg font-bold">
                     Apply
                   </button>
