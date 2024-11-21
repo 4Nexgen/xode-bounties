@@ -57,11 +57,11 @@ export function BountiesTable() {
               <tr key={`bounty-row-${k}`} className="group">
                 <td
                   className={
-                    "group-hover:bg-slate-50 w-20 p-2 border-b " +
+                    "group-hover:bg-slate-50 dark:group-hover:bg-slate-800 w-20 p-2 border-b dark:border-slate-800 " +
                     (k == 0 && "border-t")
                   }
                 >
-                  <div className="flex items-center justify-center rounded-lg p-1 h-12 w-20">
+                  <div className="flex items-center justify-center bg-white rounded-lg p-1 h-12 w-20">
                     {row.category == "pallet" && (
                       <img
                         src="/categories/substrate.png"
@@ -78,7 +78,7 @@ export function BountiesTable() {
                 </td>
                 <td
                   className={
-                    "group-hover:bg-slate-50 p-2 border-b " +
+                    "group-hover:bg-slate-50 dark:group-hover:bg-slate-800 p-2 border-b dark:border-slate-800 " +
                     (k == 0 && "border-t")
                   }
                 >
@@ -89,17 +89,17 @@ export function BountiesTable() {
                 </td>
                 <td
                   className={
-                    "group-hover:bg-slate-50 p-2 border-b " +
+                    "group-hover:bg-slate-50 dark:group-hover:bg-slate-800 p-2 border-b dark:border-slate-800 " +
                     (k == 0 && "border-t")
                   }
                 >
-                  <p className="text-slate-500 text-sm border text-center w-fit py-1 px-2 rounded-lg border-slate-100">
+                  <p className="text-slate-500 dark:text-slate-200 text-sm border text-center w-fit py-1 px-2 rounded-lg border-slate-100">
                     {formatDateToRelative(row.date)}
                   </p>
                 </td>
                 <td
                   className={
-                    "group-hover:bg-slate-50 p-2 border-b " +
+                    "group-hover:bg-slate-50 dark:group-hover:bg-slate-800 p-2 border-b dark:border-slate-800 " +
                     (k == 0 && "border-t")
                   }
                   align="right"
@@ -124,12 +124,12 @@ export function BountiesTable() {
         onClick={closeDialog}
       >
         <div
-          className="bg-white rounded-lg max-w-[500px] overflow-hidden max-h-screen flex flex-col shadow-xl"
+          className="bg-white dark:bg-theme-blue-dark rounded-lg max-w-[500px] overflow-hidden max-h-screen flex flex-col shadow-xl"
           onClick={(e) => {
             e.stopPropagation();
           }}
         >
-          <div className="p-4 border-b">
+          <div className="p-4 border-b dark:border-theme-border">
             <h4 className="font-bold text-xl">{form?.bounty?.title}</h4>
           </div>
           <div className="p-4 flex-1 overflow-y-auto">
@@ -137,11 +137,11 @@ export function BountiesTable() {
               <p>{form?.bounty?.description}</p>
               <textarea
                 rows={5}
-                className="border rounded-lg w-full p-4"
+                className="border dark:border-theme-border rounded-lg w-full p-4 bg-transparent"
               ></textarea>
             </div>
           </div>
-          <div className="p-4 border-t">
+          <div className="p-4 border-t dark:border-theme-border">
             <div className="flex flex-col text-center items-center justify-center">
               <p className="font-bold">
                 Comment on GitHub with a detailed approach to solving it
