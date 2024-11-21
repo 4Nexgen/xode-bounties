@@ -1,6 +1,16 @@
+"use client";
+
 import { bounty_sample_data } from "@/data/bounty.data";
+import { Bounty } from "@/models/bounty.interface";
+import { useState } from "react";
 
 export function BountiesTable() {
+  interface DialogForm {
+    bounty?: Bounty;
+    description?: string;
+  }
+  const [form, setForm] = useState<DialogForm>({});
+
   function formatDateToRelative(dateString: string): string {
     const givenDate: Date = new Date(dateString);
     const now: Date = new Date();
@@ -17,6 +27,24 @@ export function BountiesTable() {
     return `${Math.floor(diffInDays / 365)} year(s) ago`;
   }
 
+  const [open_bounty_dialog, setBountyDialog] = useState(false);
+
+  function openDialog() {
+    setBountyDialog(true);
+  }
+
+  function closeDialog() {
+    setBountyDialog(false);
+  }
+
+  function handleBountyClick(data: Bounty) {
+    setForm({
+      bounty: data,
+      description: "",
+    });
+    openDialog();
+  }
+
   return (
     <div>
       <h3 className="font-bold uppercase mb-4 text-theme-accent">
@@ -26,8 +54,13 @@ export function BountiesTable() {
         <tbody>
           {bounty_sample_data.map((row, k) => {
             return (
-              <tr key={`bounty-row-${k}`}>
-                <td className={"w-20 p-2 border-b " + (k == 0 && "border-t")}>
+              <tr key={`bounty-row-${k}`} className="group">
+                <td
+                  className={
+                    "group-hover:bg-slate-50 w-20 p-2 border-b " +
+                    (k == 0 && "border-t")
+                  }
+                >
                   <div className="flex items-center justify-center rounded-lg p-1 h-12 w-20">
                     {row.category == "pallet" && (
                       <img
@@ -43,22 +76,38 @@ export function BountiesTable() {
                     )}
                   </div>
                 </td>
-                <td className={"p-2 border-b " + (k == 0 && "border-t")}>
+                <td
+                  className={
+                    "group-hover:bg-slate-50 p-2 border-b " +
+                    (k == 0 && "border-t")
+                  }
+                >
                   <strong className="font-bold">{row.title}</strong>
                   <p className="text-sm text-slate-400 truncate max-w-[400px]">
                     {row.description}
                   </p>
                 </td>
-                <td className={"p-2 border-b " + (k == 0 && "border-t")}>
+                <td
+                  className={
+                    "group-hover:bg-slate-50 p-2 border-b " +
+                    (k == 0 && "border-t")
+                  }
+                >
                   <p className="text-slate-500 text-sm border text-center w-fit py-1 px-2 rounded-lg border-slate-100">
                     {formatDateToRelative(row.date)}
                   </p>
                 </td>
                 <td
-                  className={"p-2 border-b " + (k == 0 && "border-t")}
+                  className={
+                    "group-hover:bg-slate-50 p-2 border-b " +
+                    (k == 0 && "border-t")
+                  }
                   align="right"
                 >
-                  <button className="bg-theme-default text-white py-2 px-6 text-sm rounded-lg font-bold">
+                  <button
+                    className="bg-theme-default text-white py-2 px-6 text-sm rounded-lg font-bold"
+                    onClick={() => handleBountyClick(row)}
+                  >
                     Apply
                   </button>
                 </td>
@@ -67,6 +116,50 @@ export function BountiesTable() {
           })}
         </tbody>
       </table>
+      <div
+        className={
+          "fixed top-0 left-0 w-full h-full z-30 bg-[#00000042] items-center justify-center p-4 transition-all duration-1000 ease-in-out " +
+          (open_bounty_dialog ? "flex" : "hidden")
+        }
+        onClick={closeDialog}
+      >
+        <div
+          className="bg-white rounded-lg max-w-[500px] overflow-hidden max-h-screen flex flex-col shadow-xl"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <div className="p-4 border-b">
+            <h4 className="font-bold text-xl">{form?.bounty?.title}</h4>
+          </div>
+          <div className="p-4 flex-1 overflow-y-auto">
+            <div className="flex flex-col gap-2">
+              <p>{form?.bounty?.description}</p>
+              <textarea
+                rows={5}
+                className="border rounded-lg w-full p-4"
+              ></textarea>
+            </div>
+          </div>
+          <div className="p-4 border-t">
+            <div className="flex flex-col text-center items-center justify-center">
+              <p className="font-bold">
+                Comment on GitHub with a detailed approach to solving it
+              </p>
+              <p className="max-w-[400px]">
+                The better your explanation the more likely you are to get the
+                assignment and collect Xode!
+              </p>
+              <a
+                href="#"
+                className="font-bold bg-theme-default text-white py-2 px-4 text-sm rounded-lg mt-4"
+              >
+                Apply on Github
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
