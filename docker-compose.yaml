@@ -1,9 +1,6 @@
-version: "3.9"
-
 services:
   app:
-    build:
-        dockerfile: Dockerfile
+    image: xoderockson/xode-bounties:latest
     container_name: xode-bounties
     ports:
-      - 3000:3000
+      - 3014:3000
