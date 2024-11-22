@@ -40,7 +40,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://www.youtube.com/@XODEnet_" className="hover:text-gray-200">
+                <Link href="https://www.youtube.com/@XODEblockchain" className="hover:text-gray-200">
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-youtube" viewBox="0 0 24 24">
                     <path d="M23.499,6.203c-0.273-1.033-1.083-1.843-2.116-2.116C19.765,3.671,12,3.671,12,3.671s-7.765,0-9.383,0.416 c-1.033,0.273-1.843,1.083-2.116,2.116C0.084,7.82,0.084,12,0.084,12s0,4.18,0.417,5.797c0.273,1.033,1.083,1.843,2.116,2.116 c1.618,0.417,9.383,0.417,9.383,0.417s7.765,0,9.383-0.417c1.033-0.273,1.843-1.083,2.116-2.116C23.916,16.18,23.916,12,23.916,12 S23.916,7.82,23.499,6.203z M9.797,15.547v-7.094L15.203,12L9.797,15.547z" />
                   </svg>
