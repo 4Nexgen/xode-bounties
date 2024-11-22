@@ -69,9 +69,9 @@ export function BountiesTable() {
                       <Image
                         src="/categories/substrate.png"
                         className="h-full w-full object-contain"
-                        width={60}  
+                        width={60}
                         height={40}
-                        alt= "substrate"
+                        alt="substrate"
                       />
                     )}
                     {row.category == "wasm smart contract" && (
@@ -79,7 +79,7 @@ export function BountiesTable() {
                         src="/categories/ink.svg"
                         alt="ink"
                         className="h-full w-full object-contain"
-                        width={60}  
+                        width={60}
                         height={40}
                       />
                     )}
@@ -104,6 +104,21 @@ export function BountiesTable() {
                 >
                   <p className="text-slate-500 dark:text-slate-200 text-sm border text-center w-fit py-1 px-2 rounded-lg border-slate-100">
                     {formatDateToRelative(row.date)}
+                  </p>
+                </td>
+                <td
+                  className={
+                    "group-hover:bg-slate-50 dark:group-hover:bg-slate-800 p-2 border-b dark:border-slate-800 " +
+                    (k == 0 && "border-t")
+                  }
+                >
+                  <p className="text-theme-default dark:text-white text-sm font-bold border-2 text-center w-fit px-2 rounded-lg border-theme-default darl:border-white flex flex-col items-start gap-0.5 py-1.5">
+                    <span className="text-[0.7em] uppercase text-theme-default font-normal leading-none">
+                      Prize
+                    </span>
+                    <strong className="text-lg leading-none">
+                      {row.bounty_price}
+                    </strong>
                   </p>
                 </td>
                 <td
@@ -144,10 +159,10 @@ export function BountiesTable() {
           <div className="p-4 flex-1 overflow-y-auto">
             <div className="flex flex-col gap-2">
               <p>{form?.bounty?.description}</p>
-              <textarea
+              {/* <textarea
                 rows={5}
                 className="border dark:border-theme-border rounded-lg w-full p-4 bg-transparent"
-              ></textarea>
+              ></textarea> */}
             </div>
           </div>
           <div className="p-4 border-t dark:border-theme-border">
@@ -160,7 +175,8 @@ export function BountiesTable() {
                 assignment and collect Xode!
               </p>
               <a
-                href="#"
+                href={form?.bounty?.repository_url}
+                target="_blank"
                 className="font-bold bg-theme-default text-white py-2 px-4 text-sm rounded-lg mt-4"
               >
                 Apply on Github

@@ -20,7 +20,8 @@ export const bounty_sample_data: Bounty[] = [
         Configure the pallet dynamically at runtime during execution.\
         Control: There will be invulnerable candidates whose modifications can only be performed by the owner assigned through the sudo or democracy pallet.\
         The result is that the pallet_aura::Authorities will update at every block interval.",
-    bounty_price: "1000",
+    bounty_price: "1000 USDT",
     status: "",
+    repository_url: "https://github.com/Xode-DAO/xode-blockchain-v1/issues/1",
   },
 ];

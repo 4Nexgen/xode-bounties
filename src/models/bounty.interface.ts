@@ -9,4 +9,5 @@ export interface Bounty {
   specification: string;
   bounty_price: string;
   status: string;
+  repository_url: string;
 }
