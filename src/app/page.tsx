@@ -4,7 +4,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <div className="bg-theme-blue-dark text-white">
+      <div
+        className="bg-theme-blue-dark text-white bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/home-banner.webp")' }}
+      >
         <div className="container mx-auto flex flex-col items-center justify-center py-8 px-10 h-screen gap-8">
           <h1 className="text-[4em] text-center font-bold leading-none">
             Unlock New Possibilities. Get Rewarded for Your Code.
