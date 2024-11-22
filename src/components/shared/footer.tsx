@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 export function Footer() {
   return (
     <div className="border-t border-theme-border">
@@ -6,7 +8,7 @@ export function Footer() {
         <div className="container mx-auto">
           <div className="flex items-center py-4 justify-between">
             <div className="flex flex-col gap-2">
-              <img src="/logo.webp" alt="Xode Logo" className="h-10 w-fit" />
+              <Image src="/logo.webp" alt="Xode Logo" width={40}  height={40} className="h-10 w-fit" />
             </div>
             <div>
             <ul className="flex items-center gap-4 text-slate-400 text-sm">

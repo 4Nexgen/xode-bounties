@@ -3,6 +3,7 @@
 import { bounty_sample_data } from "@/data/bounty.data";
 import { Bounty } from "@/models/bounty.interface";
 import { useState } from "react";
+import Image from "next/image";
 
 export function BountiesTable() {
   interface DialogForm {
@@ -63,15 +64,21 @@ export function BountiesTable() {
                 >
                   <div className="flex items-center justify-center bg-white rounded-lg p-1 h-12 w-20">
                     {row.category == "pallet" && (
-                      <img
+                      <Image
                         src="/categories/substrate.png"
                         className="h-full w-full object-contain"
+                        width={60}  
+                        height={40}
+                        alt= "substrate"
                       />
                     )}
                     {row.category == "wasm smart contract" && (
-                      <img
+                      <Image
                         src="/categories/ink.svg"
+                        alt="ink"
                         className="h-full w-full object-contain"
+                        width={60}  
+                        height={40}
                       />
                     )}
                   </div>

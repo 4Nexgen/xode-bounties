@@ -1,5 +1,4 @@
 import { BountiesTable } from "@/components/BountiesTable";
-import Image from "next/image";
 
 export default function Home() {
   return (
