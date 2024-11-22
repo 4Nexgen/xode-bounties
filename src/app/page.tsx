@@ -9,15 +9,17 @@ export default function Home() {
       >
         <div className="container mx-auto flex flex-col items-center justify-center py-8 px-10 h-screen gap-8">
           <h1 className="text-[4em] text-center font-bold leading-none">
-            Unlock New Possibilities. Get Rewarded for Your Code.
+            Explore Xode Blockchain Bounties and Earn Rewards
           </h1>
           <div className="text-center flex flex-col items-center gap-4">
             <h2 className="text-center font-bold text-theme-accent">
-              Discover a world where innovation meets collaboration.
+              Stay up to date with the latest issues and bounties posted by the
+              Xode Blockchain team.
             </h2>
             <p className="text-center max-w-[500px] text-slate-400">
-              Xode Bounty is the ultimate platform for developers to solve
-              real-world challenges, showcase their skills, and earn rewards.
+              This platform showcases the current challenges within the Xode
+              Blockchain ecosystem, where developers can resolve issues and earn
+              rewards.
             </p>
           </div>
         </div>

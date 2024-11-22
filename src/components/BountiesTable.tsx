@@ -48,9 +48,11 @@ export function BountiesTable() {
 
   return (
     <div>
-      <h3 className="font-bold uppercase mb-4 text-theme-accent">
-        Suggested Contributions
-      </h3>
+      <h3 className="font-bold uppercase text-theme-accent">Bounties</h3>
+      <p className="text-sm text-slate-400 mb-4">
+        Browse the available bounties, pick a challenge, and start contributing
+        to the future of blockchain development!
+      </p>
       <table className="w-full">
         <tbody>
           {bounty_sample_data.map((row, k) => {
