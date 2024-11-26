@@ -1,7 +1,7 @@
 export type Category = "pallet" | "wasm smart contract";
 
 export interface Bounty {
-  id: string;
+  _id?: string;
   date: string;
   category: Category;
   title: string;
@@ -9,5 +9,5 @@ export interface Bounty {
   specification: string;
   bounty_price: string;
   status: string;
-  repository_url: string;
+  github_issue_url: string;
 }
