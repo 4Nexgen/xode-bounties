@@ -1,8 +1,8 @@
 "use client";
 
-import { bounty_sample_data } from "@/data/bounty.data";
+import { useState, useEffect } from "react";
 import { Bounty } from "@/models/bounty.interface";
-import { useState } from "react";
+import { getBounties } from "@/services/bounties.service";
 import Image from "next/image";
 
 export function BountiesTable() {
@@ -10,7 +10,19 @@ export function BountiesTable() {
     bounty?: Bounty;
     description?: string;
   }
+
   const [form, setForm] = useState<DialogForm>({});
+  const [bounties, setBounties] = useState<Bounty[]>([]);
+  const [open_bounty_dialog, setBountyDialog] = useState(false);
+
+  useEffect(() => {
+    const fetchBounties = async () => {
+      const data = await getBounties(); 
+      setBounties(data); 
+    };
+
+    fetchBounties();
+  }, []); 
 
   function formatDateToRelative(dateString: string): string {
     const givenDate: Date = new Date(dateString);
@@ -27,8 +39,6 @@ export function BountiesTable() {
 
     return `${Math.floor(diffInDays / 365)} year(s) ago`;
   }
-
-  const [open_bounty_dialog, setBountyDialog] = useState(false);
 
   function openDialog() {
     setBountyDialog(true);
@@ -55,7 +65,7 @@ export function BountiesTable() {
       </p>
       <table className="w-full">
         <tbody>
-          {bounty_sample_data.map((row, k) => {
+          {bounties.map((row, k) => {
             return (
               <tr key={`bounty-row-${k}`} className="group">
                 <td
@@ -175,7 +185,7 @@ export function BountiesTable() {
                 assignment and collect Xode!
               </p>
               <a
-                href={form?.bounty?.repository_url}
+                href={form?.bounty?.github_issue_url}
                 target="_blank"
                 className="font-bold bg-theme-default text-white py-2 px-4 text-sm rounded-lg mt-4"
               >

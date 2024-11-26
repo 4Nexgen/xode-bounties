@@ -2,7 +2,7 @@ import { Bounty } from "@/models/bounty.interface";
 
 export const bounty_sample_data: Bounty[] = [
   {
-    id: "1",
+    _id: "1",
     date: "2024-11-21",
     category: "pallet",
     title: "Enhancement: CRUD pallet_aura::Athorities enhancement",
@@ -22,6 +22,6 @@ export const bounty_sample_data: Bounty[] = [
         The result is that the pallet_aura::Authorities will update at every block interval.",
     bounty_price: "1000 USDT",
     status: "",
-    repository_url: "https://github.com/Xode-DAO/xode-blockchain-v1/issues/1",
+    github_issue_url: "https://github.com/Xode-DAO/xode-blockchain-v1/issues/1",
   },
 ];
