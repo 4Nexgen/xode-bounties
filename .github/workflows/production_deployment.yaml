@@ -12,6 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.ENV_VARIABLES }}" > .env
+          
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKER_HUB_NAMESPACE }}/xode-bounties:latest .
 
