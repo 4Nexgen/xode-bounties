@@ -1,4 +1,4 @@
-export type Category = "pallet" | "wasm smart contract";
+export type Category = "Substrate" | "Smart Contract (Ink)"| "Node JS (PAPI/PolkadotJS)";
 
 export interface Bounty {
   _id?: string;
