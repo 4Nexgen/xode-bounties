@@ -4,7 +4,7 @@ export const bounty_sample_data: Bounty[] = [
   {
     _id: "1",
     date: "2024-11-21",
-    category: "pallet",
+    category: "Substrate",
     title: "Enhancement: CRUD pallet_aura::Athorities enhancement",
     description:
       "We must modify the pallet_aura::Authorities entries through an extrinsic. This allows us to add new authorities, remove existing ones, and update the current list of authorities at specific block intervals. \

@@ -75,7 +75,7 @@ export function BountiesTable() {
                   }
                 >
                   <div className="flex items-center justify-center bg-white rounded-lg p-1 h-12 w-20">
-                    {row.category == "pallet" && (
+                    {row.category == "Substrate" && (
                       <Image
                         src="/categories/substrate.png"
                         className="h-full w-full object-contain"
@@ -84,10 +84,19 @@ export function BountiesTable() {
                         alt="substrate"
                       />
                     )}
-                    {row.category == "wasm smart contract" && (
+                    {row.category == "Smart Contract (Ink)" && (
                       <Image
                         src="/categories/ink.svg"
                         alt="ink"
+                        className="h-full w-full object-contain"
+                        width={60}
+                        height={40}
+                      />
+                    )}
+                    {row.category == "Node JS (PAPI/PolkadotJS)" && (
+                      <Image
+                        src="/categories/polkadot.png"
+                        alt="polkadot"
                         className="h-full w-full object-contain"
                         width={60}
                         height={40}
@@ -127,7 +136,7 @@ export function BountiesTable() {
                       Prize
                     </span>
                     <strong className="text-lg leading-none">
-                      {row.bounty_price}
+                      {row.bounty_price} 
                     </strong>
                   </p>
                 </td>
@@ -158,7 +167,7 @@ export function BountiesTable() {
         onClick={closeDialog}
       >
         <div
-          className="bg-white dark:bg-theme-blue-dark rounded-lg max-w-[500px] overflow-hidden max-h-screen flex flex-col shadow-xl"
+          className="bg-white dark:bg-theme-blue-dark rounded-lg max-w-[1000px] overflow-hidden max-h-screen flex flex-col shadow-xl"
           onClick={(e) => {
             e.stopPropagation();
           }}
@@ -168,7 +177,16 @@ export function BountiesTable() {
           </div>
           <div className="p-4 flex-1 overflow-y-auto">
             <div className="flex flex-col gap-2">
-              <p>{form?.bounty?.description}</p>
+              <p><b>Description:</b> <br></br>{form?.bounty?.description}</p>
+              {/* <textarea
+                rows={5}
+                className="border dark:border-theme-border rounded-lg w-full p-4 bg-transparent"
+              ></textarea> */}
+            </div>
+          </div>
+          <div className="p-4 flex-1 overflow-y-auto">
+            <div className="flex flex-col gap-2">
+              <p><b>Specification:</b> <br></br>   {form?.bounty?.specification}</p>
               {/* <textarea
                 rows={5}
                 className="border dark:border-theme-border rounded-lg w-full p-4 bg-transparent"
