@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/bounties", {
       method: "GET",
@@ -15,6 +14,8 @@ export async function GET() {
     }
 
     const data = await res.json();
+
+    console.log("data", data);
 
     return NextResponse.json(data);
   } catch (error: unknown) {
