@@ -2,7 +2,7 @@ import { Bounty } from "@/models/bounty.interface";
 
 export async function getBounties(): Promise<Bounty[]> {
   try {
-    const res = await fetch("/api/bounties", {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/bounties", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
