@@ -51,4 +51,4 @@ EXPOSE 3000
 
 ENV PORT=3000
 
-CMD HOSTNAME="127.0.0.1" node server.js
+CMD HOSTNAME="https://bounties.xode.net" node server.js
