@@ -1,4 +1,5 @@
 import { BountiesTable } from "@/components/BountiesTable";
+import DevRegistrationForm from "@/components/DevRegistrationForm";
 
 export default function Home() {
   return (
@@ -24,8 +25,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto py-10 min-h-screen">
+      <div className="container mx-auto py-10">
         <BountiesTable />
+      </div>
+      <div className="container mx-auto py-10">
+        <DevRegistrationForm />
       </div>
     </div>
   );
